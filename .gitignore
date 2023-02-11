@@ -1,0 +1,17 @@
+.DS_Store
+node_modules
+.turbo
+*.log
+.next
+dist
+dist-ssr
+*.local
+*.backup
+.env
+.cache
+server/dist
+public/dist
+storybook-static/
+
+yarn-error.log
+.serverless

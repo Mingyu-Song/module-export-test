@@ -1,0 +1,49 @@
+{
+  "name": "@mingyu-song/module-export-test",
+  "private": true,
+  "workspaces": [
+    "packages/**/**"
+  ],
+  "author": "mingyu-song",
+  "publishConfig": {
+    "@mingyu-song:registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mingyu-song/module-export-test.git"
+  },
+  "scripts": {
+    "build": "turbo run build --filter=!./apps/*",
+    "build:storybook": "turbo run build --filter=./apps/docs",
+    "dev": "turbo run dev",
+    "dev:storybook": "turbo run dev --filter=./apps/docs",
+    "lint": "turbo run lint",
+    "clean": "turbo run clean && rimraf node_modules",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "turbo run build --filter=!./apps/* && changeset publish --tag",
+    "prepare": "husky install",
+    "create:pkg": "plop component",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@chakra-ui/cli": "^2.1.8",
+    "@chakra-ui/react": "^2.3.6",
+    "@changesets/cli": "^2.22.0",
+    "@mingyu-song/eslint-config1": "*",
+    "eslint": "^8.15.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.0.3",
+    "plop": "^3.1.1",
+    "prettier": "^2.5.1",
+    "rimraf": "^3.0.2",
+    "tsup": "^6.5.0",
+    "turbo": "latest",
+    "typescript": "^4.8.4"
+  },
+  "dependencies": {
+    "react": "^18.2.0"
+  },
+  "version": "0.0.0"
+}

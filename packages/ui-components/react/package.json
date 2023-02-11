@@ -1,0 +1,69 @@
+{
+  "name": "@mingyu-song/react1",
+  "version": "2.0.0",
+  "description": "react",
+  "keywords": [
+    "react"
+  ],
+  "author": "thdalsrb1111@gmail.com",
+  "homepage": "https://github.com/mingyu-song/module-export-test#readme",
+  "license": "MIT",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "clean-package": "../../../clean-package.config.json",
+  "scripts": {
+    "prepack": "clean-package",
+    "postpack": "clean-package restore",
+    "build": "tsup src/index.ts --dts",
+    "dev": "tsup src/index.ts --watch --dts",
+    "clean": "rimraf dist .turbo node_modules",
+    "typecheck": "tsc --noEmit",
+    "lint": "TIMING=1 eslint src/**/*.ts* --fix"
+  },
+  "dependencies": {
+    "@mingyu-song/button1": "*",
+    "@chakra-ui/react": "^2.3.6",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "framer-motion": "^8.5.0",
+    "react": "18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "clean-package": "2.2.0"
+  },
+  "peerDependencies": {
+    "@chakra-ui/react": ">=2.1.0",
+    "@emotion/react": "^11.0.0",
+    "@emotion/styled": "^11.0.0",
+    "framer-motion": ">=4.0.0",
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "publishConfig": {
+    "@mingyu-song:registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mingyu-song/module-export-test.git",
+    "directory": "packages/ui-components/react"
+  },
+  "bugs": {
+    "url": "https://github.com/mingyu-song/module-export-test/issues"
+  }
+}

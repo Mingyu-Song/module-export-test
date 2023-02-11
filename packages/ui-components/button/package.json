@@ -1,0 +1,54 @@
+{
+  "name": "@mingyu-song/button1",
+  "version": "2.0.0",
+  "description": "button",
+  "keywords": [
+    "button"
+  ],
+  "author": "thdalsrb1111@gmail.com",
+  "homepage": "https://github.com/mingyu-song/module-export-test#readme",
+  "license": "MIT",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "clean-package": "../../../clean-package.config.json",
+  "scripts": {
+    "prepack": "clean-package",
+    "postpack": "clean-package restore",
+    "build": "tsup src --dts",
+    "dev": "tsup src --watch --dts",
+    "clean": "rimraf dist .turbo node_modules",
+    "typecheck": "tsc --noEmit",
+    "lint": "TIMING=1 eslint src/**/*.ts* --fix"
+  },
+  "devDependencies": {
+    "clean-package": "2.2.0"
+  },
+  "peerDependencies": {
+    "@chakra-ui/react": ">=2.1.0",
+    "react": ">=18"
+  },
+  "publishConfig": {
+    "@mingyu-song:registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mingyu-song/module-export-test.git",
+    "directory": "packages/ui-components/button"
+  },
+  "bugs": {
+    "url": "https://github.com/mingyu-song/module-export-test/issues"
+  },
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  }
+}

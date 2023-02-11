@@ -1,0 +1,5 @@
+{
+  "extends": "@mingyu-song/tsconfig1/react-library.json",
+  "include": [".", "apps/docs/.storybook/storybook-theme.js"],
+  "exclude": ["dist", "build", "node_modules"]
+}
